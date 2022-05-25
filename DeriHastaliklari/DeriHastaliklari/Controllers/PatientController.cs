@@ -6,6 +6,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
 
 namespace DeriHastalikleri.Controllers
 {
@@ -21,10 +22,17 @@ namespace DeriHastalikleri.Controllers
             //PatientController üzerine gelip Generate Constructor yap otomatik gelyor
            // _context = context;
         }*/
-        public IActionResult PatientLogin()
+        public IActionResult PatientLogin(string email, string password)
         {
+            var user =c.Patients.FirstOrDefault(x => x.Email == email && x.Password == password);
+            if(user != null)
+            {
+                HttpContext.Session.SetInt32("id", user.PatientId);
+                HttpContext.Session.SetString("fullname",user.Name + " " + user.Surname);
+               return Redirect("/DataGoruntuleme/Photo");
+            }
 
-            return View();
+            return View(); // Redirect yapılabilir
         }
 
        

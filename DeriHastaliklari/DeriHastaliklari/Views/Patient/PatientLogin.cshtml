@@ -22,7 +22,9 @@
         </div>
 
         <div class = "row" >
+            <form class= "#" method="post">
             <div class="col-1">
+                
                 <h1>HASTA GİRİŞ</h1>
             </div>
 
@@ -32,16 +34,17 @@
                     <div class="login-box">
                         <div class="mail-box">
                             </label> E-posta:</label>
-                            <input type="text" >
+                            <input type="text" name="email" >
                         </div>
                         <div class="pass-box">
                             </label>    Parola:</label>
-                            <input type="password" >
+                            <input type="password" name="password" >
                         </div>
 
                     
-                        <input class= "btn" type = "button" name="" value="GİRİŞ">
+                        <input class= "btn" type = "submit" name="" value="GİRİŞ">
                         <input class= "parolabtn"type = "button" name="" value="Parolamı Unuttum">
+                        
                        
                         <input class= "kayitbtn"type = "button" name="" value="Kayıt Ol" onclick="location.href='@Url.Action("PatientRegister","Patient")'">
 
@@ -50,6 +53,7 @@
                 </div>
 
             </div>
+           </form>
         </div>
     
 </body>

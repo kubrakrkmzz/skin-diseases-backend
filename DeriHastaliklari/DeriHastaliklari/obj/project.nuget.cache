@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "K9wROZYYtOyd0f4xqDVV4D+qIu9LAlNo+MXiPuFm3Ni859qzw/kN9+6zTWzc0mmPBQ46Lc0IxeygLUjX+y5c0g==",
+  "dgSpecHash": "2JfV6wPda36B1Q4mgjYRo/ySB/k0BJMpNhg+O5UdHFhtxPpNxR1hiVVsV5kPQBhbSUUtRSBFbZlTkx93nOx+Ng==",
   "success": true,
   "projectFilePath": "C:\\Users\\Berkan\\source\\repos\\DeriHastaliklari\\DeriHastaliklari\\DeriHastaliklari.csproj",
   "expectedPackageFiles": [
@@ -22,6 +22,7 @@
     "C:\\Users\\Berkan\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\Berkan\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\5.0.0\\microsoft.aspnetcore.razor.language.5.0.0.nupkg.sha512",
     "C:\\Users\\Berkan\\.nuget\\packages\\microsoft.aspnetcore.razor.runtime\\2.2.0\\microsoft.aspnetcore.razor.runtime.2.2.0.nupkg.sha512",
+    "C:\\Users\\Berkan\\.nuget\\packages\\microsoft.aspnetcore.session\\2.2.0\\microsoft.aspnetcore.session.2.2.0.nupkg.sha512",
     "C:\\Users\\Berkan\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.2.0\\microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
     "C:\\Users\\Berkan\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Berkan\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.0.0\\microsoft.codeanalysis.analyzers.3.0.0.nupkg.sha512",
