@@ -27,7 +27,7 @@ namespace DeriHastaliklari.Models
         [DataType(DataType.Date)]
         public string bthDay { get; set; }
 
-        [DataType(DataType.EmailAddress, ErrorMessage = "Lütfen geçerli email adresi girin.")]
+        //[DataType(DataType.EmailAddress, ErrorMessage = "Lütfen geçerli email adresi girin.")]
         [Required(ErrorMessage = "Lütfen boşlukları doldurunuz")]
        
         public string Email { get; set; }

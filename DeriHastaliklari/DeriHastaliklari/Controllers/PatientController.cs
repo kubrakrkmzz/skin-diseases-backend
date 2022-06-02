@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
 namespace DeriHastalikleri.Controllers
 {
@@ -14,29 +15,29 @@ namespace DeriHastalikleri.Controllers
     {
 
         Context c = new Context();
-       /* private readonly Context _context;
+        /* private readonly Context _context;
 
-        public PatientController(//Context context
-            )
-        {
-            //PatientController üzerine gelip Generate Constructor yap otomatik gelyor
-           // _context = context;
-        }*/
+         public PatientController(//Context context
+             )
+         {
+             //PatientController üzerine gelip Generate Constructor yap otomatik gelyor
+            // _context = context;
+         }*/
         public IActionResult PatientLogin(string email, string password)
         {
-            var user =c.Patients.FirstOrDefault(x => x.Email == email && x.Password == password);
-            if(user != null)
+            var user = c.Patients.FirstOrDefault(x => x.Email == email && x.Password == password);
+            if (user != null)
             {
                 HttpContext.Session.SetInt32("id", user.PatientId);
-                HttpContext.Session.SetString("fullname",user.Name + " " + user.Surname);
-               return Redirect("/DataGoruntuleme/Photo");
+                HttpContext.Session.SetString("fullname", user.Name + " " + user.Surname);
+                return Redirect("/DataGoruntuleme/Photo");
             }
 
             return View(); // Redirect yapılabilir
         }
 
-       
-        public IActionResult PatientRegister() { return View(); }   
+
+        public IActionResult PatientRegister() { return View(); }
         public async Task<IActionResult> PatientRegisterSave(Patient p)
         {
             await c.Patients.AddAsync(p);
@@ -75,6 +76,48 @@ namespace DeriHastalikleri.Controllers
 
             return View();
         }
+
+
+        public IActionResult PForgotPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> PForgotPassword(PForgotPassword request)
+        {
+            var bilgiler = await c.Patients.FirstOrDefaultAsync(x => x.Name == request.Name && x.Surname == request.Surname && x.TcNo == request.TcNo && x.bthDay == request.bthDay && x.Email == request.Email);
+
+            if (bilgiler != null)
+            {
+                ViewData["PatientId"] = bilgiler.PatientId;
+                return View("PNewPassword");
+            }
+
+            return View("PForgotPassword");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> PNewPassword(NewPassword request)
+        {
+
+            if (request.NewPass != request.NewPassRepeat)
+            {
+                ViewData["warning"] = "Parolanız uyuşmamaktadır!";
+
+                return View("PNewPassword");
+            }
+            else
+            {
+                var bilgiler = await c.Patients.FirstOrDefaultAsync(x => x.PatientId == request.PatientId);
+                bilgiler.Password = request.NewPass; //eski passworde yenisini set ediyoruz.
+                c.SaveChanges();
+                return View("PatientLogin");
+            }
+        }
+
+
+
 
     }
 }

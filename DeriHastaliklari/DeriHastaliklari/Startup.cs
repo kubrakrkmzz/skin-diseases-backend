@@ -32,6 +32,7 @@ namespace DeriHastaliklari
                 {
                     //Eğer doktor giriş yapmadıysa beni doktor girişine yönlendir.
                     x.LoginPath = "/Patient/DoctorLogin";
+                   
                 });
         }
 

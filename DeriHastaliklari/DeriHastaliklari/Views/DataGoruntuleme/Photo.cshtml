@@ -1,6 +1,8 @@
 ﻿@using Microsoft.AspNetCore.Http;
+
 @{
     Layout = null;
+    string fullname = Context.Session.GetString("fullname");
 }
 <!DOCTYPE html>
 <html>
@@ -44,7 +46,7 @@
             <div class="divsag">
                 <img src="~/fotograf-yukle/images/logo.png" loading="lazy" alt="" class="image">
                 <div class="saglikbilgiler">
-                    <div class="text-block-2">Sağlık Durumu</div>
+                    <div class="text-block-2">Sağlık Durumu @fullname</div>
                     <div class="text-block-2">Alerji Durumu</div>
                     <div class="text-block-2">Aktif Kullanılan İlaç(lar)</div>
                     <div class="text-block-2">Kronik Rahatsızlık:</div>

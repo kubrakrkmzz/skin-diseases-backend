@@ -153,3 +153,5 @@ C:\Users\Berkan\source\repos\DeriHastaliklari\DeriHastaliklari\bin\Debug\net5.0\
 C:\Users\Berkan\source\repos\DeriHastaliklari\DeriHastaliklari\obj\Debug\net5.0\Razor\Views\DataGoruntuleme\Index.cshtml.g.cs
 C:\Users\Berkan\source\repos\DeriHastaliklari\DeriHastaliklari\obj\Debug\net5.0\Razor\Views\Patient\PatientRegister.cshtml.g.cs
 C:\Users\Berkan\source\repos\DeriHastaliklari\DeriHastaliklari\obj\Debug\net5.0\Razor\Views\DataGoruntuleme\Photo.cshtml.g.cs
+C:\Users\Berkan\source\repos\DeriHastaliklari\DeriHastaliklari\obj\Debug\net5.0\Razor\Views\Patient\PForgotPassword.cshtml.g.cs
+C:\Users\Berkan\source\repos\DeriHastaliklari\DeriHastaliklari\obj\Debug\net5.0\Razor\Views\Patient\PNewPassword.cshtml.g.cs
