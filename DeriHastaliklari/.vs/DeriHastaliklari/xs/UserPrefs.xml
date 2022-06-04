@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{800B3ECB-D10B-4B72-888E-C1FCEFC83768}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DeriHastaliklari/Startup.cs">
+    <Files>
+      <File FileName="DeriHastaliklari/Controllers/DataGoruntuleme.cs" Line="1" Column="1" />
+      <File FileName="DeriHastaliklari/Controllers/PatientController.cs" Line="1" Column="1" />
+      <File FileName="DeriHastaliklari/Controllers/HomeController.cs" Line="1" Column="1" />
+      <File FileName="DeriHastaliklari/Startup.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="DeriHastaliklari" expanded="True">
+            <Node name="DeriHastaliklari" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Startup.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.ItemProperties.DeriHastaliklari PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

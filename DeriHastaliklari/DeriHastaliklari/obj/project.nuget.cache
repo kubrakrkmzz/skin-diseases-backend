@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Kscd4bDneSwFLVAe/MT8Jry1KamFINDx4ywNTzP/EIoEGmp48t8BXgqIJ7xckspwJHMMwn3xFUVM4APfX7m8qQ==",
+  "dgSpecHash": "kNSTrsguUeO7j/B3sXklnduWj7AAgKK2zOoSQUZUh9FsGRA3W0HOitm0G8wMNoyt+BI8j05UbonqJx73QfSwPw==",
   "success": true,
   "projectFilePath": "/Users/zeynepgul/Documents/GitHub/skin-diseases-backend/DeriHastaliklari/DeriHastaliklari/DeriHastaliklari.csproj",
   "expectedPackageFiles": [
@@ -22,6 +22,7 @@
     "/Users/zeynepgul/.nuget/packages/microsoft.aspnetcore.razor/2.2.0/microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "/Users/zeynepgul/.nuget/packages/microsoft.aspnetcore.razor.language/5.0.0/microsoft.aspnetcore.razor.language.5.0.0.nupkg.sha512",
     "/Users/zeynepgul/.nuget/packages/microsoft.aspnetcore.razor.runtime/2.2.0/microsoft.aspnetcore.razor.runtime.2.2.0.nupkg.sha512",
+    "/Users/zeynepgul/.nuget/packages/microsoft.aspnetcore.session/2.2.0/microsoft.aspnetcore.session.2.2.0.nupkg.sha512",
     "/Users/zeynepgul/.nuget/packages/microsoft.aspnetcore.webutilities/2.2.0/microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
     "/Users/zeynepgul/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "/Users/zeynepgul/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0/microsoft.codeanalysis.analyzers.3.0.0.nupkg.sha512",
