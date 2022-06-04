@@ -1,10 +1,16 @@
 ﻿<Properties StartupConfiguration="{800B3ECB-D10B-4B72-888E-C1FCEFC83768}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DeriHastaliklari/Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DeriHastaliklari/Views/Patient/PatientLogin.cshtml">
     <Files>
       <File FileName="DeriHastaliklari/Controllers/DataGoruntuleme.cs" Line="1" Column="1" />
       <File FileName="DeriHastaliklari/Controllers/PatientController.cs" Line="1" Column="1" />
       <File FileName="DeriHastaliklari/Controllers/HomeController.cs" Line="1" Column="1" />
-      <File FileName="DeriHastaliklari/Startup.cs" Line="1" Column="1" />
+      <File FileName="DeriHastaliklari/Startup.cs" Line="26" Column="10" />
+      <File FileName="DeriHastaliklari/Views/Patient/DoctorLogin.cshtml" Line="1" Column="1" />
+      <File FileName="DeriHastaliklari/Views/Home/Index.cshtml" Line="1" Column="1" />
+      <File FileName="DeriHastaliklari/Views/DataGoruntuleme/Index.cshtml" Line="1" Column="1" />
+      <File FileName="DeriHastaliklari/Views/Home/Privacy.cshtml" Line="1" Column="1" />
+      <File FileName="DeriHastaliklari/Views/Patient/PatientRegister.cshtml" Line="1" Column="1" />
+      <File FileName="DeriHastaliklari/Views/Patient/PatientLogin.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,7 +18,9 @@
           <Node name="DeriHastaliklari" expanded="True">
             <Node name="DeriHastaliklari" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Startup.cs" selected="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Index.cshtml" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
