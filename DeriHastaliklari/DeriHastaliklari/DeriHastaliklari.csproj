@@ -23,6 +23,7 @@
   <ItemGroup>
     <Folder Include="wwwroot\hasta-kayit-1\scripts\" />
     <Folder Include="wwwroot\hasta-kayit-birlesik\scripts\" />
+    <Folder Include="wwwroot\resimler\" />
   </ItemGroup>
 
 </Project>

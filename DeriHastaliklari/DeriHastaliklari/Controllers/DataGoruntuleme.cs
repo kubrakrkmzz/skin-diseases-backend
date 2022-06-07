@@ -12,9 +12,6 @@ namespace DeriHastaliklari.Controllers
         }
 
        
-        public IActionResult Photo()
-        {
-            return View();
-        }
+        
     }
 }

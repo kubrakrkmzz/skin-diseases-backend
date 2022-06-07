@@ -18,6 +18,39 @@ namespace DeriHastaliklari.Migrations
                 .HasAnnotation("ProductVersion", "5.0.4")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("DeriHastaliklari.Models.AddPhoto", b =>
+                {
+                    b.Property<int>("ImageId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Additional")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cont")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Itch")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Pain")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PatientId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ImageId");
+
+                    b.HasIndex("PatientId")
+                        .IsUnique();
+
+                    b.ToTable("AddPhoto");
+                });
+
             modelBuilder.Entity("DeriHastaliklari.Models.Doctor", b =>
                 {
                     b.Property<int>("DoctorID")
@@ -72,7 +105,6 @@ namespace DeriHastaliklari.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TcNo")
-                        .HasMaxLength(11)
                         .HasColumnType("int");
 
                     b.Property<string>("bthDay")
@@ -82,6 +114,22 @@ namespace DeriHastaliklari.Migrations
                     b.HasKey("PatientId");
 
                     b.ToTable("Patients");
+                });
+
+            modelBuilder.Entity("DeriHastaliklari.Models.AddPhoto", b =>
+                {
+                    b.HasOne("DeriHastaliklari.Models.Patient", "Patient")
+                        .WithOne("AddPhoto")
+                        .HasForeignKey("DeriHastaliklari.Models.AddPhoto", "PatientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Patient");
+                });
+
+            modelBuilder.Entity("DeriHastaliklari.Models.Patient", b =>
+                {
+                    b.Navigation("AddPhoto");
                 });
 #pragma warning restore 612, 618
         }

@@ -8,6 +8,8 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using System.IO;
+using System;
 
 namespace DeriHastalikleri.Controllers
 {
@@ -30,7 +32,7 @@ namespace DeriHastalikleri.Controllers
             {
                 HttpContext.Session.SetInt32("id", user.PatientId);
                 HttpContext.Session.SetString("fullname", user.Name + " " + user.Surname);
-                return Redirect("/DataGoruntuleme/Photo");
+                return RedirectToAction("Photo", "Patient");
             }
 
             return View(); // Redirect yapılabilir
@@ -116,8 +118,29 @@ namespace DeriHastalikleri.Controllers
             }
         }
 
+        
+        public IActionResult Photo()
+        {
+            return View();  
+        }
 
 
+
+        [HttpPost]
+        public IActionResult Photo(AddPhoto a)
+        {
+            if(a.ImageURL != null)
+            {
+                var extension = Path.GetExtension(a.ImageURL.FileName);
+                var newImagename = Guid.NewGuid() + extension;
+                var location = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot/resimler/", newImagename);
+                var stream = new FileStream(location, FileMode.Create);
+                a.ImageURL.CopyTo(stream);
+               //tabloya eklemek için c ile işlem yapılması gerekiyor ama ne ?
+            }
+
+            return View();
+        }
 
     }
 }

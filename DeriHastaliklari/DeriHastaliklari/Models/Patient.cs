@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DeriHastaliklari.Models
 {
@@ -44,9 +45,7 @@ namespace DeriHastaliklari.Models
         [Required(ErrorMessage = "Lütfen boşlukları doldurunuz")]
         public string Disease { get; set; }
 
-
-
-
+        public AddPhoto AddPhoto { get; set; } //entity olarak ekleniyor.
 
     }
 }
