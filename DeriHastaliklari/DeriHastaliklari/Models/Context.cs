@@ -12,5 +12,7 @@ namespace DeriHastaliklari.Models
 
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Patient> Patients { get; set; }
+
+        public DbSet<AddPhoto> AddPhotos { get; set; }  
     }
 }
