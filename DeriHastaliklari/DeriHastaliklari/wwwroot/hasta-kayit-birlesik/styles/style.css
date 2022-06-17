@@ -426,13 +426,13 @@
   .form-2 {
     margin-left: 16px;
   }
-  
-  .text-block-9 {
+
+.text-block-9 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    width: 100px;
+    width: 150px;
     height: 50px;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
@@ -440,7 +440,7 @@
     justify-content: center;
     color: #733878;
     text-align: right;
-  }
+}
   
   .text-field {
     max-width: 200px;
@@ -479,7 +479,7 @@
   }
   .btn {
     height: 48px;
-    width: 360px;;
+    width: 360px;
     background: #733878;
     border: 2px solid #733878;
     color: #FFFFFF;
@@ -494,14 +494,14 @@
     }
   
   .text-block-10 {
-    width: 100px;
+    width: 200px;
     height: 50px;
     color: #733878;
     text-align: center;
   }
   
   .text-block-11 {
-    width: 100px;
+    width: 200px;
     height: 50px;
     color: #733878;
     text-align: center;

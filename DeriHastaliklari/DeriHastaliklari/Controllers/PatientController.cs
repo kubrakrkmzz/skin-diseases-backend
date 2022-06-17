@@ -25,23 +25,39 @@ namespace DeriHastalikleri.Controllers
              //PatientController üzerine gelip Generate Constructor yap otomatik gelyor
             // _context = context;
          }*/
-        public IActionResult PatientLogin(string email, string password)
+        public IActionResult PatientLogin()
+        { 
+           // var user = c.Patients.FirstOrDefault(x => x.Email == email && x.Password == password);
+           //if (user != null)
+           //{
+           //     HttpContext.Session.SetInt32("id", user.PatientId);
+           //  HttpContext.Session.SetString("fullname", user.Name + " " + user.Surname);
+           //    return RedirectToAction("Photo", "Patient");
+           // }
+           //else
+           // {
+           //     ViewData["Message"] = "Böyle bir kullanıcı yok!";
+           // }
+           return View(); // Redirect yapılabilir
+        }
+
+        [HttpPost]
+        public IActionResult PatientLogin2(string email, string password)
         {
-            var user = c.Patients.FirstOrDefault(x => x.Email == email && x.Password == password);
-            if (user != null)
+            var user = c.Patients.Where(x => x.Email == email && x.Password == password).ToList();
+            if (user.Count>0)
             {
-                HttpContext.Session.SetInt32("id", user.PatientId);
-                HttpContext.Session.SetString("fullname", user.Name + " " + user.Surname);
-                return RedirectToAction("Photo", "Patient");
+                HttpContext.Session.SetInt32("id", user[0].PatientId);
+                HttpContext.Session.SetString("fullname", user[0].Name + " " + user[0].Surname);
+                return View("Photo", user);
             }
             else
             {
                 ViewData["Message"] = "Böyle bir kullanıcı yok!";
             }
-            return View(); // Redirect yapılabilir
+
+            return View("PatientLogin");
         }
-
-
         public IActionResult PatientRegister() { return View(); }
         public async Task<IActionResult> PatientRegisterSave(Patient p)
         {
@@ -66,7 +82,7 @@ namespace DeriHastalikleri.Controllers
             var bilgiler = c.Doctors.FirstOrDefault(x => x.Username == request.Username && x.Password == request.Password);
             if (bilgiler != null)
             {
-                //kullanıcı bilgilerini tutar 
+                //kullanıcı bilgilerini tutar
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, request.Username)
@@ -137,23 +153,29 @@ namespace DeriHastalikleri.Controllers
             if (a.ImageURL != null)
             {
                 var extension = Path.GetExtension(a.ImageURL.FileName);
-                if (!extension.Contains("jpg") || !extension.Contains("png") || !extension.Contains("jpeg"))
+                if (extension.Contains("jpg") || extension.Contains("png") || extension.Contains("jpeg"))
+                {
+                    
+                    a.PatientId = HttpContext.Session.GetInt32("id").Value;
+                    c.AddPhotos.Add(a);
+                    await c.SaveChangesAsync();
+                    var newImagename = a.ImageId + extension;
+                    var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/resimler/", newImagename);
+                    var stream = new FileStream(location, FileMode.Create);
+                    a.ImageURL.CopyTo(stream);
+                }
+                else
                 {
                     ViewData["warning"] = "Lütfen resim formatında seçim yapınız.";
                     return View();
                 }
-                a.PatientId = HttpContext.Session.GetInt32("id").Value;
-                c.AddPhotos.Add(a);
-                await c.SaveChangesAsync();
-                var newImagename = a.ImageId + extension;
-                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/resimler/", newImagename);
-                var stream = new FileStream(location, FileMode.Create);
-                a.ImageURL.CopyTo(stream);
+                
                 
             }
-            // <img src="/wwwroot/resimler/3.jpg"
+            var model =c.Patients.FirstOrDefault(x=>x.PatientId == a.PatientId);
+            return View(model);
 
-            return View();
+
         }
 
     }
