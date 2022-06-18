@@ -192,7 +192,7 @@ namespace DeriHastalikleri.Controllers
                 }
                 
             }
-            var model =c.Patients.FirstOrDefault(x=>x.PatientId == a.PatientId);
+            var model =c.Patients.Where(x=>x.PatientId == a.PatientId).ToList();
             return View(model);
 
 
