@@ -1,7 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Http;
 @model List<Patient>
 
-
 @{
     Layout = null;
   
@@ -25,7 +24,10 @@
         <div class="div0">
             <div class="divsol">
                 <div class="navbar">
+                    @*<img src="~/fotograf-yukle/images/logo.png" class="logo-icon">*@
+                    <a asp-controller="Patient" asp-action="PatientLogOut">
                     <img src="~/fotograf-yukle/images/logo.png" class="logo-icon">
+                    </a> 
                 </div>
                 <div class="kisiselbilgiler">
                     <div class="text-block-2">Kişisel Bilgiler</div>
@@ -75,7 +77,7 @@
                                                     <option value=true>Evet</option>
                                                 </select>
                     <br />
-                    @Html.Label("Eklemek istediğiniz bilgi varsa lütfen ekleyin.")
+                    @Html.Label("Ek bilgi")
                     @Html.TextBoxFor(x=>x, new { @class = "form-control", @name="Additional", @id="Additional"})
                     <br />
 

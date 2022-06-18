@@ -61,12 +61,26 @@ namespace DeriHastalikleri.Controllers
         public IActionResult PatientRegister() { return View(); }
         public async Task<IActionResult> PatientRegisterSave(Patient p)
         {
-           
+            var kontrol = c.Patients.Any(x => x.Email == p.Email);
+           if (kontrol == true)
+            {
+                ViewData["Message"] = "Lütfen başka bir mail adresi kullanın!";
+                return View("PatientRegister");
+            }
+
             await c.Patients.AddAsync(p);
             await c.SaveChangesAsync();
             return RedirectToAction("PatientLogin", "Patient");
 
         }
+
+        public IActionResult PatientLogOut()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index","Home");
+
+        }
+
 
         [HttpGet]
         public IActionResult DoctorLogin()
@@ -94,9 +108,16 @@ namespace DeriHastalikleri.Controllers
 
                 return RedirectToAction("Index", "DataGoruntuleme");
 
-            }
-
+            } 
+     
+            ViewData["warning"] = "Lütfen bilgilerinizi kontrol edin";
             return View();
+        }
+
+        public async Task<IActionResult> DoctorLogout()
+        {
+            await HttpContext.SignOutAsync();
+            return RedirectToAction("Index", "Home");
         }
 
 
@@ -169,7 +190,6 @@ namespace DeriHastalikleri.Controllers
                     ViewData["warning"] = "Lütfen resim formatında seçim yapınız.";
                     return View();
                 }
-                
                 
             }
             var model =c.Patients.FirstOrDefault(x=>x.PatientId == a.PatientId);
