@@ -1,5 +1,5 @@
 .body {
-    margin : 0px;
+    margin: 0px;
     padding: 0px;
     font-family: 'Readex Pro', sans-serif;
     display: -webkit-box;
@@ -14,9 +14,9 @@
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    background-color: #ccc1de;
+    background-color: #FFA2A2;
     background-size: cover;
-  }
+}
 
 
   .logo{

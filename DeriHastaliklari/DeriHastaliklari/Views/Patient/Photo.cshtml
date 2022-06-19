@@ -41,7 +41,7 @@
                             <div class="text-block-2">T.C.</div>
 
                             <td>@item.TcNo</td>
-
+                         
                         }
 
                    
@@ -49,10 +49,14 @@
 
                 </div>
             </div>
+            
             <div class="divkutu">
-                <div class="div1">
-               
-                </div>
+
+                    <div class="col-1">
+                        <h1>Hastalık Detayları</h1>
+                    </div>
+
+                <div class="divickutu">
                 <form class= "form-group" action="Photo" method="post" enctype="multipart/form-data">
                     
                     @Html.Label("Kaşıntınız var mı?")
@@ -86,6 +90,7 @@
                 
                 <input class="button-4 w-button" type="submit" name="" value="Kaydet">
                 </form>
+                </div>
             </div>
             <div class="divsag">
                 <img src="~/fotograf-yukle/images/logo.png" loading="lazy" alt="" class="image">
